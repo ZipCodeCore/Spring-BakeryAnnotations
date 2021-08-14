@@ -1,8 +1,9 @@
 package com.zipcodewilmington.bakery.models;
 
-
+import javax.persistence.Entity;
 import java.util.Objects;
 
+@Entity
 public class Baker {
     private Long id;
 
