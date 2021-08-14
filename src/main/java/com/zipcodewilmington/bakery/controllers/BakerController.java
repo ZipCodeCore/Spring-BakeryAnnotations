@@ -17,6 +17,7 @@ public class BakerController {
         this.service = service;
     }
 
+    @GetMapping("/index")
     public ResponseEntity<Iterable<Baker>> index() {
         return new ResponseEntity<>(service.index(), HttpStatus.OK);
     }
