@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class BakerController {
-    @Autowired
-    private BakerService service;
 
+    private BakerService service;
+    @Autowired
     public BakerController(BakerService service) {
         this.service = service;
     }
