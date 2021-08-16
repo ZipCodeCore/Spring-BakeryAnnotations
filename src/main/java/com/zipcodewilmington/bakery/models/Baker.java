@@ -9,13 +9,10 @@ import java.util.Objects;
 @Entity
 public class Baker {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String name;
-
     private String employeeId;
-
     private String specialty;
 
     public Baker() {

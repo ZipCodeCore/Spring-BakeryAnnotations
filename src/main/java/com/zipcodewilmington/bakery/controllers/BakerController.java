@@ -17,22 +17,27 @@ public class BakerController {
     public BakerController(BakerService service) {
         this.service = service;
     }
+
     @GetMapping(value = "/getAllBaker")
     public ResponseEntity<Iterable<Baker>> index() {
         return new ResponseEntity<>(service.index(), HttpStatus.OK);
     }
+
     @GetMapping(value = "/getBakerById/{id}")
     public ResponseEntity<Baker> show(@PathVariable Long id) {
         return new ResponseEntity<>(service.show(id), HttpStatus.OK);
     }
+
     @PostMapping(value = "/createBaker")
     public ResponseEntity<Baker> create(@RequestBody Baker baker) {
         return new ResponseEntity<>(service.create(baker), HttpStatus.CREATED);
     }
+
     @PutMapping(value = "/updateBaker/{id}")
     public ResponseEntity<Baker> update(@PathVariable Long id, @RequestBody Baker baker) {
         return new ResponseEntity<>(service.update(id, baker), HttpStatus.OK);
     }
+
     @DeleteMapping(value = "/deleteBaker")
     public ResponseEntity<Boolean> destroy(@PathVariable Long id) {
         return new ResponseEntity<>(service.delete(id), HttpStatus.OK);
