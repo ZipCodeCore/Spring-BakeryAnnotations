@@ -3,14 +3,20 @@ package com.zipcodewilmington.bakery.services;
 import com.zipcodewilmington.bakery.models.Baker;
 import com.zipcodewilmington.bakery.repositories.BakerRepository;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
 public class BakerService {
+
+    @Autowired
     private BakerRepository repository;
 
     public BakerService(BakerRepository repository) {
         this.repository = repository;
     }
 
-    public Iterable<Baker> index() {
+    public Iterable<Baker> listBakers() {
         return repository.findAll();
     }
 
